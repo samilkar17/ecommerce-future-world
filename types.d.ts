@@ -1,0 +1,39 @@
+interface ErrorProps {
+  error: Error;
+  reset: () => void;
+}
+
+type ProductType = {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+  quantity: number;
+  handle: string;
+  tags: string;
+  gql_id: string;
+ 
+};
+type CartItem = {
+  title: string;
+  price: number;
+  quantity: number;
+  image: string;
+  id: string;
+  merchandiseId: string;
+}
+
+type OrderType = {
+  name: string;
+  orderNumber: number;
+  statusUrl: string
+  lineItems: {
+    edges: Array<{
+      node: {
+        currentQuantity: number;
+        title: 2
+      }
+    }>
+  }
+}
